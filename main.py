@@ -11,7 +11,7 @@ from fastapi.templating import Jinja2Templates
 models.Base.metadata.create_all(bind = engine)
 
 app = FastAPI()
-print('first')
+
 
 template = Jinja2Templates(directory="templates")
 app.mount("/templates", StaticFiles(directory="templates"), name="index")

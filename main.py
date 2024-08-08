@@ -7,10 +7,11 @@ from typing_extensions import Annotated
 from db import models, schemas, crud
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-#fastapi dev main.py
+
 models.Base.metadata.create_all(bind = engine)
 
 app = FastAPI()
+
 
 template = Jinja2Templates(directory="templates")
 app.mount("/templates", StaticFiles(directory="templates"), name="index")

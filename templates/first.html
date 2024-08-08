@@ -8,20 +8,20 @@
 </head>
 <body>
     <div class="solid">
-    <p> Інформацію взято з сайту  -  https://uk.wikipedia.org/wiki/</p>
-    <form method="get" action="/book_list">
-        <p><button type="submit">Список книжок</button></p></form></div>
-  
-    <h3>{% for book in books %}
-
-        <p><a href="https://uk.wikipedia.org/wiki/{{book.title}}"> {{book.title}}</a> - <a href="https://uk.wikipedia.org/wiki/{{book.author}}">{{book.author}}</a>{{book.img_path}}
-        <img src= "/templates/{{book.img_path}}" ></p>
-        <p>{{book.pages}} сторінок</p>
-
+        <p> Інформацію взято з сайту  -  https://uk.wikipedia.org/wiki/</p>
+        <form method="get" action="/book_list">
+            <p><button type="submit">Список книжок</button></p>
+        </form>
+    </div>
+    <h1>
+        <a href="https://uk.wikipedia.org/wiki/{{book.title}}">{{book.title}} - </a>
+        <a href="https://uk.wikipedia.org/wiki/{{book.author}}">{{book.author}}</a>
+    </h1>
+    <div class='container'>
         <p>{{book.info}} </p>
-        <p></p>
-
-    {% endfor %}</h3>
+        <img src= "/static/{{book.img_path}}">
+        <p>{{book.pages}} сторінок</p>
+    </div>
 
 </body>
 </html>

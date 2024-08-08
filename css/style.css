@@ -4,6 +4,11 @@ body{
 
 }
 
+img {
+    width: 180px;
+    height: 300px;
+}
+
 p{
     text-align: center;
     padding: 10px;
@@ -22,6 +27,16 @@ h1{
     bottom: -10000;
     animation-name: hide;
     animation-duration: 4s;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.container img {
+    width: 500px;
+    height: 800px;
 }
 
 button{

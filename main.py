@@ -35,10 +35,10 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/book")
-def booklist(request:Request, skip: int=0 , limit: int=50, db:Session= Depends(get_db)):
-    books = crud.get_books(db, skip=skip, limit=limit)
-    return template.TemplateResponse("first.html", {'request': request, 'books': books})
+@app.get("/book/{book_id}")
+def book_info(request:Request, book_id: int ,  db:Session= Depends(get_db)):
+    book = crud.get_book(db, book_id)
+    return template.TemplateResponse("first.html", {'request': request, 'book': book})
 
 @app.get("/book_list")
 def booklists(request:Request, skip: int=0 , limit: int=50, db:Session= Depends(get_db)):
